@@ -258,4 +258,13 @@ describe KubernetesReleasesController do
       end
     end
   end
+
+  # we are submitting params that cannot be coverted into form style and we cannot
+  # submit them via to_json since we also need id/project_id ...
+  # TODO: convert to integration test with json body ... or get rid of this whole controller
+  # https://github.com/rails/rails/issues/23997
+  def post(action, params)
+    @controller.stubs(:params).returns(ActionController::Parameters.new(params))
+    super(action, params.slice(:id, :project_id))
+  end
 end

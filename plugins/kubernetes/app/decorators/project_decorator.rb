@@ -4,6 +4,6 @@ Project.class_eval do
   has_many :kubernetes_deploy_group_roles, class_name: 'Kubernetes::DeployGroupRole'
 
   def name_for_label
-    name.parameterize('-')
+    name.parameterize(separator: '-')
   end
 end

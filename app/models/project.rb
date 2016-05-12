@@ -48,7 +48,7 @@ class Project < ActiveRecord::Base
   scope :search, ->(name) { where("name like ?", "%#{name}%") }
 
   def repo_name
-    name.parameterize('_')
+    name.parameterize(separator: '_')
   end
 
   def docker_repo

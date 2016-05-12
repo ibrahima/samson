@@ -91,12 +91,14 @@ describe JobsController do
     end
 
     describe "#create" do
+      let(:commands_param) { { ids: [] } }
+
       before do
         JobService.stubs(:new).with(project, user).returns(job_service)
         job_service.stubs(:execute!).capture(execute_called).returns(job)
         JobExecution.stubs(:start_job)
 
-        post :create, commands: {ids: []}, job: {
+        post :create, commands: commands_param, job: {
           command: command,
           commit: "master"
         }, project_id: project.to_param
@@ -110,8 +112,16 @@ describe JobsController do
         assert_equal [["master", [], command]], execute_called
       end
 
+      describe "with selected commands" do
+        let(:commands_param) { { ids: [commands(:global).id]} }
+
+        it "links the command" do
+          assert_equal [["master", [commands(:global).id.to_s], command]], execute_called
+        end
+      end
+
       describe "when invalid" do
-        let("job") { Job.new }
+        let(:job) { Job.new }
 
         it "renders" do
           assert_template :new

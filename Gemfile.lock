@@ -9,6 +9,14 @@ GIT
       recursive-open-struct (= 1.0.0)
       rest-client
 
+GIT
+  remote: git@github.com:grosser/attr_encrypted.git
+  revision: 7dffc8607c6e096f2f497c9cf04e765ece89c2aa
+  branch: grosser/alias
+  specs:
+    attr_encrypted (3.0.1)
+      encryptor (~> 3.0.0)
+
 PATH
   remote: plugins/aws_ecr
   specs:
@@ -83,21 +91,25 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
-    actionmailer (4.2.6)
-      actionpack (= 4.2.6)
-      actionview (= 4.2.6)
-      activejob (= 4.2.6)
+    actioncable (5.0.0.rc1)
+      actionpack (= 5.0.0.rc1)
+      nio4r (~> 1.2)
+      websocket-driver (~> 0.6.1)
+    actionmailer (5.0.0.rc1)
+      actionpack (= 5.0.0.rc1)
+      actionview (= 5.0.0.rc1)
+      activejob (= 5.0.0.rc1)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.6)
-      actionview (= 4.2.6)
-      activesupport (= 4.2.6)
-      rack (~> 1.6)
-      rack-test (~> 0.6.2)
+    actionpack (5.0.0.rc1)
+      actionview (= 5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
+      rack (~> 2.x)
+      rack-test (~> 0.6.3)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (4.2.6)
-      activesupport (= 4.2.6)
+    actionview (5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
@@ -106,21 +118,19 @@ GEM
       activesupport (>= 2.2.2)
     active_model_serializers (0.9.5)
       activemodel (>= 3.2)
-    activejob (4.2.6)
-      activesupport (= 4.2.6)
-      globalid (>= 0.3.0)
-    activemodel (4.2.6)
-      activesupport (= 4.2.6)
-      builder (~> 3.1)
-    activerecord (4.2.6)
-      activemodel (= 4.2.6)
-      activesupport (= 4.2.6)
-      arel (~> 6.0)
-    activesupport (4.2.6)
+    activejob (5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
+      globalid (>= 0.3.6)
+    activemodel (5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
+    activerecord (5.0.0.rc1)
+      activemodel (= 5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
+      arel (~> 7.0)
+    activesupport (5.0.0.rc1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.8)
     airbrake (4.3.6)
@@ -131,10 +141,8 @@ GEM
       sprockets (~> 3.0)
       tilt
     ansible (0.2.2)
-    arel (6.0.3)
+    arel (7.0.0)
     ast (2.2.0)
-    attr_encrypted (3.0.1)
-      encryptor (~> 3.0.0)
     autoprefixer-rails (6.3.3.1)
       execjs
     awesome_print (1.6.1)
@@ -240,7 +248,7 @@ GEM
     json (1.8.3)
     json_pure (1.8.3)
     jwt (1.5.1)
-    kaminari (0.16.3)
+    kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     lograge (0.3.6)
@@ -259,9 +267,9 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    minitest-rails (2.2.1)
-      minitest (~> 5.7)
-      railties (~> 4.1)
+    minitest-rails (3.0.0.rc1)
+      minitest (~> 5.8)
+      railties (~> 5.0.0.rc1)
     mixlib-shellout (2.2.6)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
@@ -323,22 +331,24 @@ GEM
     puma (3.4.0)
     pyu-ruby-sasl (0.0.3.3)
     query_diet (0.6.0)
-    rack (1.6.4)
+    rack (2.0.0.rc1)
+      json
     rack-mini-profiler (0.9.9.2)
       rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails (4.2.6)
-      actionmailer (= 4.2.6)
-      actionpack (= 4.2.6)
-      actionview (= 4.2.6)
-      activejob (= 4.2.6)
-      activemodel (= 4.2.6)
-      activerecord (= 4.2.6)
-      activesupport (= 4.2.6)
+    rails (5.0.0.rc1)
+      actioncable (= 5.0.0.rc1)
+      actionmailer (= 5.0.0.rc1)
+      actionpack (= 5.0.0.rc1)
+      actionview (= 5.0.0.rc1)
+      activejob (= 5.0.0.rc1)
+      activemodel (= 5.0.0.rc1)
+      activerecord (= 5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.6)
-      sprockets-rails
+      railties (= 5.0.0.rc1)
+      sprockets-rails (>= 2.0.0)
     rails-assets-angular (1.4.9)
     rails-assets-angular-mocks (1.4.9)
       rails-assets-angular (= 1.4.9)
@@ -379,6 +389,10 @@ GEM
     rails-assets-vis (4.15.0)
     rails-assets-x-editable (1.5.1)
       rails-assets-jquery (>= 1.6)
+    rails-controller-testing (0.1.1)
+      actionpack (~> 5.x)
+      actionview (~> 5.x)
+      activesupport (~> 5.x)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -387,9 +401,10 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    railties (4.2.6)
-      actionpack (= 4.2.6)
-      activesupport (= 4.2.6)
+    railties (5.0.0.rc1)
+      actionpack (= 5.0.0.rc1)
+      activesupport (= 5.0.0.rc1)
+      method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
@@ -425,7 +440,7 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    single_cov (0.2.2)
+    single_cov (0.4.0)
     slop (3.6.0)
     soft_deletion (0.7.0)
       activerecord (>= 3.2.0, < 5.1.0)
@@ -437,14 +452,14 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
-    sse-rails-engine (1.4.0)
-      rails (~> 4.0)
+    sse-rails-engine (1.5.0)
+      rails (>= 4.0, < 5.1)
     sucker_punch (2.0.1)
       concurrent-ruby (~> 1.0.0)
     terminal-table (1.5.2)
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.2)
+    tilt (2.0.3)
     timers (4.1.1)
       hitimes
     tzinfo (1.2.2)
@@ -463,6 +478,9 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
+    websocket-driver (0.6.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     zendesk_api (1.13.4)
       faraday (~> 0.9)
       hashie (>= 1.2, < 4.0, != 3.3.0)
@@ -480,7 +498,7 @@ DEPENDENCIES
   airbrake (~> 4.3.6)
   angular-rails-templates
   ansible
-  attr_encrypted
+  attr_encrypted!
   awesome_print
   better_errors
   binding_of_caller
@@ -499,12 +517,12 @@ DEPENDENCIES
   faraday-http-cache
   github-markdown
   goldiloader
-  kaminari
+  kaminari (~> 0.17.0)
   kubeclient!
   lograge
   logstash-event
   maxitest
-  minitest-rails
+  minitest-rails (= 3.0.0.rc1)
   mocha
   mysql2
   net-http-persistent
@@ -522,7 +540,7 @@ DEPENDENCIES
   puma
   query_diet
   rack-mini-profiler
-  rails (~> 4.2.0)
+  rails (= 5.0.0.rc1)
   rails-assets-angular!
   rails-assets-angular-mocks!
   rails-assets-angular-scenario!
@@ -545,6 +563,7 @@ DEPENDENCIES
   rails-assets-underscore!
   rails-assets-vis!
   rails-assets-x-editable!
+  rails-controller-testing
   rubocop
   samson_aws_ecr!
   samson_datadog!

@@ -277,6 +277,7 @@ describe DeploysController do
         end
 
         it "creates a deploy" do
+          deploy_called.each { |c| c[1] = c[1].to_h }
           assert_equal [[stage, {"reference" => "master"}]], deploy_called
         end
 
@@ -297,6 +298,7 @@ describe DeploysController do
         end
 
         it "creates a deploy" do
+          deploy_called.each { |c| c[1] = c[1].to_h }
           assert_equal [[stage, {"reference" => "master"}]], deploy_called
         end
 
