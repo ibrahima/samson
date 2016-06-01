@@ -267,9 +267,25 @@ describe Kubernetes::DeployExecutor do
       out.must_include "LOGS:\nLOG-1\n"
     end
 
-    it "does not crash when logs endpoint fails with a 404" do
+    it "requests regular logs when previous logs are not available" do
       stub_request(:get, "http://foobar.server/api/v1/namespaces/staging/pods/pod-resque_worker/log?previous=true").
         to_raise(KubeException.new('a', 'b', 'c'))
+      stub_request(:get, "http://foobar.server/api/v1/namespaces/staging/pods/pod-resque_worker/log").
+        to_return(body: "LOG-1")
+
+      worker_is_unstable
+
+      refute execute!
+
+      out.must_include "LOGS:\nLOG-1\n"
+    end
+
+    it "does not crash when both log endpoints fails with a 404" do
+      stub_request(:get, "http://foobar.server/api/v1/namespaces/staging/pods/pod-resque_worker/log?previous=true").
+        to_raise(KubeException.new('a', 'b', 'c'))
+      stub_request(:get, "http://foobar.server/api/v1/namespaces/staging/pods/pod-resque_worker/log").
+        to_raise(KubeException.new('a', 'b', 'c'))
+
       worker_is_unstable
 
       refute execute!

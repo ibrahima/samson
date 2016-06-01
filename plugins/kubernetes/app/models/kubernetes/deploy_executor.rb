@@ -100,7 +100,11 @@ module Kubernetes
       logs = begin
         client.get_pod_log(pod.name, namespace, previous: pod.restarted?)
       rescue KubeException
-        "No logs found"
+        begin
+          client.get_pod_log(pod.name, namespace, previous: !pod.restarted?)
+        rescue KubeException
+          "No logs found"
+        end
       end
       @output.puts logs
     end
